@@ -1,14 +1,14 @@
-#include "pieces.h"
+#pragma once
 
-char mPieces[7][4][5][5] =
-{
+namespace core {
+namespace pieces {
+
+	class Pieces
 	{
-		{
-			{0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0},
-			{0, 0, 2, 1, 0},
-			{0, 0, 1, 1, 0}
-			{0, 0, 0, 0, 0},
-		}
-	},
-}
+	public:
+		int GetBlockType(int piece, int rotation, int x, int y);
+		int GetXInitialPosition(int piece, int rotation);
+		int GetYInitialPosition(int piece, int rotation);
+	};
+
+}}
