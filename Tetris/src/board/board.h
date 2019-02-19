@@ -18,16 +18,21 @@ namespace board {
 	class Board
 	{
 	public:
-		Board(Pieces* pieces);
+		Board(Pieces* pieces, int screenHeight);
 
+		int GetXPosInPixel(int pos);
+		int GetYPosInPixel(int pos);
 		bool IsFreeBlock(int x, int y);
 		bool IsPossibleMovement(int x, int y, int piece, int rotation);
 		void StorePiece(int x, int y, int piece, int rotation);
+		void DeletePossibleLines();
 		bool IsGameOver();
 
 	private:
 		enum { POS_FREE, POS_FILLED };
 		int board[BOARD_WIDTH][BOARD_HEIGHT];
+		int screenHeight;
+		Pieces* pieces;
 
 		void InitBoard();
 		void DeleteLine(int y);
