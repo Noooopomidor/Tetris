@@ -20,8 +20,8 @@ namespace board {
 	public:
 		Board(Pieces* pieces, int screenHeight);
 
-		int GetXPosInPixel(int pos);
-		int GetYPosInPixel(int pos);
+		int GetXPosInPixel(int blockPosition);
+		int GetYPosInPixel(int blockPosition);
 		bool IsFreeBlock(int x, int y);
 		bool IsPossibleMovement(int x, int y, int piece, int rotation);
 		void StorePiece(int x, int y, int piece, int rotation);
